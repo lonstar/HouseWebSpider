@@ -1,12 +1,12 @@
 # coding=utf-8
 
-import urllib2
+import urllib.request
 
 def get_html_by_url(url):
     try:
-        response = urllib2.urlopen(url, timeout=60)
+        response = urllib.request.urlopen(url, timeout=60)
         html = response.read().strip()
-    except Exception, e:
+    except Exception as e:
         print("urlopen timeout", e)
         response = urllib2.urlopen(url)
         html = response.read().strip()
